@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import SingleProduct from './pages/SingleProduct'
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import Cart from './pages/Cart'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/product/:id' element={<SingleProduct />} />
+            <Route path='/cart/:id?' element={<Cart />} />
           </Routes>
         </Container>
       </main>
