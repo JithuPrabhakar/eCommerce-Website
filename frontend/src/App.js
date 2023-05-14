@@ -5,9 +5,10 @@ import { Container } from 'react-bootstrap'
 
 import Home from './pages/Home'
 import SingleProduct from './pages/SingleProduct'
+import Cart from './pages/Cart'
+import Login from './pages/Login'
 
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
-import Cart from './pages/Cart'
 
 const App = () => {
   return (
@@ -16,9 +17,10 @@ const App = () => {
       <main className='py-3'>
         <Container>
           <Routes>
-            <Route path='/' element={<Home />} />
+            <Route path='/login' element={<Login />} />
             <Route path='/product/:id' element={<SingleProduct />} />
             <Route path='/cart/:id?' element={<Cart />} />
+            <Route path='/' element={<Home />} />
           </Routes>
         </Container>
       </main>
