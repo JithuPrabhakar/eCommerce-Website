@@ -11,13 +11,14 @@ const Login = () => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  const location = useLocation()
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const userLogin = useSelector((state) => state.userLogin)
   const { loading, error, userInfo } = userLogin
 
-  const redirect = location.search ? location.search.split('=')[1] : '/'
+  const { search } = useLocation()
+  const sp = new URLSearchParams(search)
+  const redirect = sp.get('redirect') || '/'
 
   useEffect(() => {
     if (userInfo) {
